@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="load_moves_from_imos" model="edi.integration">
+        <field name="name">Load Moves from IMOS</field>
+        <field name="type">load_moves_from_imos</field>
+        <field name="integration_flow">in</field>
+        <field name="sequence">1</field>
+        <field name="synchronization_content_type">xml</field>
+        <field name="synchronization_creation">0</field>
+        <field name="connection_id" ref="c_account_account_edi.c_account_connection" />
+        <field name="active" eval="False" />
+    </record>
+</odoo>

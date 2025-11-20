@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="c_account_connection" model="edi.connection">
+        <field name="name">Connection to IMOS</field>
+        <field name="type">ftp</field>
+        <field name="configuration"><![CDATA[{
+    "host": "51.75.202.32",
+    "user": "poc",
+    "password": "ChangeMoiVite",
+    "port": 21,
+    "in_folder":"/upload"
+}]]></field>
+<!-- key can be uses instead of password when we will be in prod -->
+        <field name="ftp_in_done_let" eval="False"/>
+        <!-- Very important param : this avoid to load xslx in standard open files. The file is loaded in memory (byte) and 
+        should be open into _process_content. This allow us to 'select' the encoding. -->
+        <field name="ftp_load_content" eval="False" />
+    </record>
+</odoo>
